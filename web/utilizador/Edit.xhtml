@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUtilizadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditUtilizadorLabel_passWord}" for="passWord" />
+                    <h:inputText id="passWord" value="#{utilizadorController.selected.passWord}" title="#{bundle.EditUtilizadorTitle_passWord}" />
+                    <h:outputLabel value="#{bundle.EditUtilizadorLabel_idUtilizador}" for="idUtilizador" />
+                    <h:inputText id="idUtilizador" value="#{utilizadorController.selected.idUtilizador}" title="#{bundle.EditUtilizadorTitle_idUtilizador}" />
+                    <h:outputLabel value="#{bundle.EditUtilizadorLabel_telefone}" for="telefone" />
+                    <h:inputText id="telefone" value="#{utilizadorController.selected.telefone}" title="#{bundle.EditUtilizadorTitle_telefone}" />
+                    <h:outputLabel value="#{bundle.EditUtilizadorLabel_mail}" for="mail" />
+                    <h:inputText id="mail" value="#{utilizadorController.selected.mail}" title="#{bundle.EditUtilizadorTitle_mail}" />
+                    <h:outputLabel value="#{bundle.EditUtilizadorLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{utilizadorController.selected.nome}" title="#{bundle.EditUtilizadorTitle_nome}" />
+                    <h:outputLabel value="#{bundle.EditUtilizadorLabel_tipoUtilizador}" for="tipoUtilizador" />
+                    <h:selectOneMenu id="tipoUtilizador" value="#{utilizadorController.selected.tipoUtilizador}" title="#{bundle.EditUtilizadorTitle_tipoUtilizador}" >
+                        <f:selectItems value="#{tipoUtilizadorController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{utilizadorController.update}" value="#{bundle.EditUtilizadorSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditUtilizadorViewLink}"/>
+                <br />
+                <h:commandLink action="#{utilizadorController.prepareList}" value="#{bundle.EditUtilizadorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditUtilizadorIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

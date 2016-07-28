@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRespostaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRespostaLabel_idResposta}"/>
+                    <h:outputText value="#{respostaController.selected.idResposta}" title="#{bundle.ViewRespostaTitle_idResposta}"/>
+                    <h:outputText value="#{bundle.ViewRespostaLabel_texto}"/>
+                    <h:outputText value="#{respostaController.selected.texto}" title="#{bundle.ViewRespostaTitle_texto}"/>
+                    <h:outputText value="#{bundle.ViewRespostaLabel_pergunta}"/>
+                    <h:outputText value="#{respostaController.selected.pergunta}" title="#{bundle.ViewRespostaTitle_pergunta}"/>
+                    <h:outputText value="#{bundle.ViewRespostaLabel_respCerta}"/>
+                    <h:outputText value="#{respostaController.selected.respCerta}" title="#{bundle.ViewRespostaTitle_respCerta}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{respostaController.destroyAndView}" value="#{bundle.ViewRespostaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRespostaEditLink}"/>
+                <br />
+                <h:commandLink action="#{respostaController.prepareCreate}" value="#{bundle.ViewRespostaCreateLink}" />
+                <br />
+                <h:commandLink action="#{respostaController.prepareList}" value="#{bundle.ViewRespostaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.ViewRespostaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

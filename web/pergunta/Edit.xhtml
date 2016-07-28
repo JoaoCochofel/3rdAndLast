@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPerguntaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPerguntaLabel_inquerito}" for="inquerito" />
+                    <h:selectOneMenu id="inquerito" value="#{perguntaController.selected.inquerito}" title="#{bundle.EditPerguntaTitle_inquerito}" >
+                        <f:selectItems value="#{inqueritoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditPerguntaLabel_idPergunta}" for="idPergunta" />
+                    <h:inputText id="idPergunta" value="#{perguntaController.selected.idPergunta}" title="#{bundle.EditPerguntaTitle_idPergunta}" />
+                    <h:outputLabel value="#{bundle.EditPerguntaLabel_textoPergunta}" for="textoPergunta" />
+                    <h:inputText id="textoPergunta" value="#{perguntaController.selected.textoPergunta}" title="#{bundle.EditPerguntaTitle_textoPergunta}" />
+                </h:panelGrid>
+                <h:commandLink action="#{perguntaController.update}" value="#{bundle.EditPerguntaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPerguntaViewLink}"/>
+                <br />
+                <h:commandLink action="#{perguntaController.prepareList}" value="#{bundle.EditPerguntaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.EditPerguntaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

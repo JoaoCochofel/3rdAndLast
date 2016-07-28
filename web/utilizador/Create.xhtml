@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUtilizadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUtilizadorLabel_telefone}" for="telefone" />
+                    <h:inputText id="telefone" value="#{controlUser.user.telefone}" title="#{bundle.CreateUtilizadorTitle_telefone}" />
+                    <h:outputLabel value="#{bundle.CreateUtilizadorLabel_mail}" for="mail" />
+                    <h:inputText id="mail" value="#{controlUser.user.mail}" title="#{bundle.CreateUtilizadorTitle_mail}" />
+                    <h:outputLabel value="#{bundle.CreateUtilizadorLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{controlUser.user.nome}" title="#{bundle.CreateUtilizadorTitle_nome}" />
+
+                    <h:outputLabel value="Password" for="password" />
+                    <h:inputSecret id="password" value="#{controlUser.user.passWord}" title="Password" />
+
+
+                    <h:outputLabel value="#{bundle.CreateUtilizadorLabel_tipoUtilizador}" for="tipoUtilizador" />
+                    <h:selectOneMenu value="#{controlUser.idTipo}">
+                        <f:selectItems  var="tipo" itemValue="#{tipo.idTipoUtilizador}" value="#{controlUser.tipoUtilizador}" itemLabel="#{tipo.designacao}"/>
+                    </h:selectOneMenu>
+
+
+
+
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{controlUser.insertUser}" value="#{bundle.CreateUtilizadorSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{utilizadorController.prepareList}" value="#{bundle.CreateUtilizadorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+            </h:form>
+
+            <form action="${pageContext.request.contextPath}/JavaEE2ndTry/faces/adminPage.xhtml">
+                <input type="submit" value="Voltar" />
+            </form>
+
+        </ui:define>
+    </ui:composition>
+
+</html>

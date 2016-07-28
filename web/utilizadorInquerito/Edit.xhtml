@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUtilizadorInqueritoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditUtilizadorInqueritoLabel_inquerito}" for="inquerito" />
+                    <h:selectOneMenu id="inquerito" value="#{utilizadorInqueritoController.selected.inquerito}" title="#{bundle.EditUtilizadorInqueritoTitle_inquerito}" >
+                        <f:selectItems value="#{inqueritoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditUtilizadorInqueritoLabel_idUtilizadorInqerito}" for="idUtilizadorInqerito" />
+                    <h:inputText id="idUtilizadorInqerito" value="#{utilizadorInqueritoController.selected.idUtilizadorInqerito}" title="#{bundle.EditUtilizadorInqueritoTitle_idUtilizadorInqerito}" />
+                    <h:outputLabel value="#{bundle.EditUtilizadorInqueritoLabel_utilizador}" for="utilizador" />
+                    <h:selectOneMenu id="utilizador" value="#{utilizadorInqueritoController.selected.utilizador}" title="#{bundle.EditUtilizadorInqueritoTitle_utilizador}" >
+                        <f:selectItems value="#{utilizadorController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{utilizadorInqueritoController.update}" value="#{bundle.EditUtilizadorInqueritoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditUtilizadorInqueritoViewLink}"/>
+                <br />
+                <h:commandLink action="#{utilizadorInqueritoController.prepareList}" value="#{bundle.EditUtilizadorInqueritoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.EditUtilizadorInqueritoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

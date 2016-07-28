@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRespostaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRespostaLabel_idResposta}" for="idResposta" />
+                    <h:inputText id="idResposta" value="#{respostaController.selected.idResposta}" title="#{bundle.EditRespostaTitle_idResposta}" />
+                    <h:outputLabel value="#{bundle.EditRespostaLabel_texto}" for="texto" />
+                    <h:inputText id="texto" value="#{respostaController.selected.texto}" title="#{bundle.EditRespostaTitle_texto}" />
+                    <h:outputLabel value="#{bundle.EditRespostaLabel_pergunta}" for="pergunta" />
+                    <h:selectOneMenu id="pergunta" value="#{respostaController.selected.pergunta}" title="#{bundle.EditRespostaTitle_pergunta}" >
+                        <f:selectItems value="#{perguntaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRespostaLabel_respCerta}" for="respCerta" />
+                    <h:inputText id="respCerta" value="#{respostaController.selected.respCerta}" title="#{bundle.EditRespostaTitle_respCerta}" />
+                </h:panelGrid>
+                <h:commandLink action="#{respostaController.update}" value="#{bundle.EditRespostaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRespostaViewLink}"/>
+                <br />
+                <h:commandLink action="#{respostaController.prepareList}" value="#{bundle.EditRespostaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.EditRespostaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

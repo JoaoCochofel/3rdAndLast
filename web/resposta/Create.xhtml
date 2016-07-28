@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRespostaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRespostaLabel_idResposta}" for="idResposta" />
+                    <h:inputText id="idResposta" value="#{respostaController.selected.idResposta}" title="#{bundle.CreateRespostaTitle_idResposta}" />
+                    <h:outputLabel value="#{bundle.CreateRespostaLabel_texto}" for="texto" />
+                    <h:inputText id="texto" value="#{respostaController.selected.texto}" title="#{bundle.CreateRespostaTitle_texto}" />
+                    <h:outputLabel value="#{bundle.CreateRespostaLabel_pergunta}" for="pergunta" />
+                    <h:selectOneMenu id="pergunta" value="#{respostaController.selected.pergunta}" title="#{bundle.CreateRespostaTitle_pergunta}" >
+                        <f:selectItems value="#{perguntaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRespostaLabel_respCerta}" for="respCerta" />
+                    <h:inputText id="respCerta" value="#{respostaController.selected.respCerta}" title="#{bundle.CreateRespostaTitle_respCerta}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{respostaController.create}" value="#{bundle.CreateRespostaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{respostaController.prepareList}" value="#{bundle.CreateRespostaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.CreateRespostaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

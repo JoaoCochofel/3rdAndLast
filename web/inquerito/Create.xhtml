@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateInqueritoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateInqueritoLabel_tituloInquerito}" for="tituloInquerito" />
+                    <h:inputText id="tituloInquerito" value="#{inqueritoController.selected.tituloInquerito}" title="#{bundle.CreateInqueritoTitle_tituloInquerito}" />
+                    <h:outputLabel value="#{bundle.CreateInqueritoLabel_dataFim}" for="dataFim" />
+                    <h:inputText id="dataFim" value="#{inqueritoController.selected.dataFim}" title="#{bundle.CreateInqueritoTitle_dataFim}" />
+                    <h:outputLabel value="#{bundle.CreateInqueritoLabel_dataInicio}" for="dataInicio" />
+                    <h:inputText id="dataInicio" value="#{inqueritoController.selected.dataInicio}" title="#{bundle.CreateInqueritoTitle_dataInicio}" />
+                    <h:outputLabel value="#{bundle.CreateInqueritoLabel_idInquerito}" for="idInquerito" />
+                    <h:inputText id="idInquerito" value="#{inqueritoController.selected.idInquerito}" title="#{bundle.CreateInqueritoTitle_idInquerito}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{inqueritoController.create}" value="#{bundle.CreateInqueritoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{inqueritoController.prepareList}" value="#{bundle.CreateInqueritoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.CreateInqueritoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

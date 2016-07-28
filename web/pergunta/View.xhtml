@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPerguntaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPerguntaLabel_inquerito}"/>
+                    <h:outputText value="#{perguntaController.selected.inquerito}" title="#{bundle.ViewPerguntaTitle_inquerito}"/>
+                    <h:outputText value="#{bundle.ViewPerguntaLabel_idPergunta}"/>
+                    <h:outputText value="#{perguntaController.selected.idPergunta}" title="#{bundle.ViewPerguntaTitle_idPergunta}"/>
+                    <h:outputText value="#{bundle.ViewPerguntaLabel_textoPergunta}"/>
+                    <h:outputText value="#{perguntaController.selected.textoPergunta}" title="#{bundle.ViewPerguntaTitle_textoPergunta}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{perguntaController.destroyAndView}" value="#{bundle.ViewPerguntaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPerguntaEditLink}"/>
+                <br />
+                <h:commandLink action="#{perguntaController.prepareCreate}" value="#{bundle.ViewPerguntaCreateLink}" />
+                <br />
+                <h:commandLink action="#{perguntaController.prepareList}" value="#{bundle.ViewPerguntaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index2" value="#{bundle.ViewPerguntaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

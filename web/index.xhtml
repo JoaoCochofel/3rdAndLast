@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <title>GesInquerito</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <meta name="author" content="Riccardo Massera"></meta>
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body style="padding-top: 60px; background-color: #add;">
+        <b:container>
+            <h:form styleClass="form-signin" prependId="false">
+                <h2 class="form-signin-heading">Login</h2>
+                <b:inputText id="Username" placeholder="Username" value="#{controlBean.username}" required="true">
+                    <f:facet name="prepend">
+                        <b:icon name="user" />
+                    </f:facet>
+                </b:inputText>
+                <h:message for="Username" style="color:red"/>
+                <b:inputText id="Password" placeholder="Password" type="password" value="#{controlBean.password}" required="true">
+                    <f:facet name="prepend">
+                        <b:iconAwesome name="key" />
+                    </f:facet>
+                </b:inputText>
+                <h:message for="Password" style="color:red"/>
+                <b:commandButton look="primary btn-block" value="Sign In" icon="log-in" size="lg" action="#{controlBean.checkUser()}"/>
+            </h:form>
+            <h:form styleClass="form-signin" prependId="false">
+                <b:commandButton look="primary btn-block" value="Registar" icon="log-in" size="lg" action="#{controlBean.createUser}"/>
+            </h:form>
+        </b:container>
+
+       <!-- <br />
+        <h:link outcome="/tipoUtilizador/List" value="Show All TipoUtilizador Items"/>
+        <br />
+        <h:link outcome="/utilizador/List" value="Show All Utilizador Items"/>-->
+    </h:body>
+
+
+</html>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>GesInquerito</title>
+        <meta name="author" content="Riccardo Massera"></meta>
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body style="padding-top: 60px; background-color: #add;">
+        <b:container>
+            <h:form prependId="false">
+                <h2 class="form-signin-heading">Admin page</h2>
+                <br></br>
+                <h3 class="form-signin-heading">Operações do utilizador</h3>
+                <br></br>
+                <b:commandButton value="Ver Utilizadores" icon="log-in" size="lg" action="#{controlBean.viewUser}"/>
+                <b:commandButton value="Criar Utilizador" icon="log-in" size="lg" action="#{controlBean.createUser}"/>
+                <br></br>
+                <br></br>
+                <h3 class="form-signin-heading">Tipos de utilizador</h3>
+                <br></br>
+                <b:commandButton value="Ver tipo de utilizadores" icon="log-in" size="lg" action="#{controlBean.viewUserType}"/>
+                <b:commandButton value="Criar tipo de utilizador" icon="log-in" size="lg" action="#{controlBean.createUserType}"/>
+                
+            </h:form>
+        </b:container>
+
+        <b:container>
+            <br></br>
+
+            <h:form>
+                
+                <h3 class="form-signin-heading">Backup</h3>
+                <b:inputText id="Tempo" label="Tempo em minutos:"
+                             required="true" renderLabel="true" value="#{controlBackup.tempo}"/>
+                <h:message for="Tempo" />
+                <br></br>
+                <b:commandButton update="@form" value="Fazer backup" action="#{controlBackup.makeBackup}"/>
+            </h:form>
+
+
+        </b:container>
+
+        <center>
+            <br></br>
+            <form action="${pageContext.request.contextPath}/JavaEE2ndTry/faces/index.xhtml" method="post">
+                <input type="submit" value="Logout" />
+            </form>
+        </center>
+
+    </h:body>
+</html>
+

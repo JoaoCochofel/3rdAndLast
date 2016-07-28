@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="resposta/List.xhtml" x="1650" y="450" zoom="true"/>
+        <Node id="pergunta/Create.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="respInquerito/List.xhtml" x="1400" y="600" zoom="true"/>
+        <Node id="resposta/List.xhtml" x="1650" y="450" zoom="true"/>
+        <Node id="pergunta/Create.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="faces/managePage.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="faces/adminPage.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="utilizador/Create.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="tipoUtilizador/Create.xhtml" x="2400" y="150" zoom="true"/>
+        <Node id="utilizadorInquerito/Create.xhtml" x="150" y="1350" zoom="true"/>
+        <Node id="resposta/View.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="respInquerito/View.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="respInquerito/Edit.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="faces/utilizador/Edit.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="resposta/Create.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="faces/newjsf.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="template.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="inquerito/Edit.xhtml" x="1150" y="750" zoom="true"/>
+        <Node id="inquerito/Create.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="faces/userPage.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="pergunta/List.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="utilizador/List.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="utilizadorInquerito/List.xhtml" x="400" y="1200" zoom="true"/>
+        <Node id="inquerito/View.xhtml" x="1900" y="300" zoom="true"/>
+        <Node id="inquerito/List.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="pergunta/View.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="resposta/Edit.xhtml" x="650" y="1050" zoom="true"/>
+        <Node id="faces/tipoUtilizador/Edit.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="faces/utilizador/Create.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="notificateBackup.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="pergunta/Edit.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="index2.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="respInquerito/Create.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="tipoUtilizador/List.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="faces/tipoUtilizador/Create.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="tipoUtilizador/View.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="utilizador/Edit.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="utilizadorInquerito/View.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="utilizador/View.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="utilizadorInquerito/Edit.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="utilizador/Edit.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="utilizadorInquerito/View.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="utilizador/View.xhtml" x="1400" y="150" zoom="true"/>
+
+        <Node id="tipoUtilizador/Edit.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="adminPage.xhtml" x="650" y="600" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
