@@ -1,26 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>GesInqueritos</title>
     </h:head>
     <h:body>
-        
+
         <br></br>
         <center><h1>Estatísticas</h1></center>
 
         <br></br>
-        Número de inquéritos disponiveis: #{controlManager.countInq()}
+        Número de inquéritos criados: #{controlManager.countInq()}
+        <br/>
+        <h:form>
+            <ui:repeat value="#{inqueritosLister.inqueritos}" var="inquerito" varStatus="status">
+                <li>
+
+                    <h:commandLink value="#{inquerito.tituloInquerito}" 
+                                   action="#{inqueritosLister.selectInq(inquerito.idInquerito)}"/>
+
+
+                </li>
+            </ui:repeat>
+        </h:form>
+
+        <br/>
+        Número de inquéritos activos: #{controlManager.getCurrInq()}
+
+
+        <br/>
+        <br/>
+
+        <form action="${pageContext.request.contextPath}/JavaEE2ndTry/faces/manageBean.xhtml" method="post">
+            <input type="submit" value="Voltar" />
+        </form>
 
     </h:body>
-
-    <br></br>
-    <br></br>
-
-    <form action="${pageContext.request.contextPath}/JavaEE2ndTry/faces/manageBean.xhtml" method="post">
-        <input type="submit" value="Voltar" />
-    </form>
 
 </html>
 
