@@ -31,6 +31,13 @@ public class Pergunta implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return textoPergunta;
+    }
+    
+    
+
     public Inquerito getInquerito() {
         return this.inquerito;
     }

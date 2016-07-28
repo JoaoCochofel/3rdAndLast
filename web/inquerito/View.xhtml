@@ -11,18 +11,15 @@
 
     <h1>#{inqueritosLister.inquerito.tituloInquerito}</h1>
     <h:body>
-        
         <h:form>
-            <ui:repeat value="#{inqueritosLister.respostasDadas}" var="res" varStatus="status">
-                <h:selectOneMenu value="#{inqueritosLister.respostasDadas}" label="#{inqueritosLister.perguntasRespostas.keySet[status.index]}">
-                    <f:selectItems itemLabel="#{inqueritosLister.perguntasRespostas.get(inqueritosLister.perguntasRespostas.keySet[status.index]).texto}"/>
+            <ui:repeat value="#{inqueritosLister.lp}" var="res" varStatus="status">
+                <h:outputLabel for="perguntas" value="#{inqueritosLister.lp.get(status.index).textoPergunta}"/>
+                <h:selectOneMenu value="#{inqueritosLister.respostasDadas}" label="#{inqueritosLister.lp.get(status.index)}" id="perguntas">
+                    <f:selectItems var="respostas" value="#{inqueritosLister.ll.get(status.index)}"/>
                 </h:selectOneMenu>
-            </ui:repeat>
-            
+                <br/>
+            </ui:repeat><br/>
             <h:commandButton /> <!-- submit do inqueritoLister -->
         </h:form>
-        
-        
     </h:body>
 </html>
-

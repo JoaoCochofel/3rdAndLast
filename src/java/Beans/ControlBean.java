@@ -8,6 +8,7 @@ package Beans;
 import Algoritmos.SessionUtils;
 import Entities.Utilizador;
 import EntityBeans.UtilizadorFacade;
+import static com.sun.xml.ws.security.addressing.impl.policy.Constants.logger;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -75,8 +76,8 @@ public class ControlBean implements Serializable {
         List<Utilizador> userList;
         userList = userFac.findAll();
 
-        HttpSession session2 = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-        session2.setAttribute("mySession", this.getUsername());
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        session.setAttribute("mySession", this.getUsername());
 
         for (Utilizador utilizador : userList) {
             if (utilizador.getNome().equals(username) && utilizador.getPassWord().equals(password)) {
@@ -94,7 +95,7 @@ public class ControlBean implements Serializable {
         }
         return "error";
     }
-   
+
     public String createUser() {
         return "newUser";
     }
@@ -124,4 +125,5 @@ public class ControlBean implements Serializable {
         return this.getUsername();
 
     }
+
 }

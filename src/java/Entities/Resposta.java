@@ -34,6 +34,13 @@ public class Resposta implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return texto;
+    }
+    
+    
+
     public Long getIdResposta() {
         return this.idResposta;
     }

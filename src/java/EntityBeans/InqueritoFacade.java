@@ -36,4 +36,8 @@ public class InqueritoFacade extends AbstractFacade<Inquerito> {
     public long getLast(){
         return (((Long)em.createQuery("select max(i.idInquerito) from Inquerito i").getSingleResult())+1);
     }
+    
+//    public Inquerito getInqueritoById(Long id){
+//        return (Inquerito)(em.createQuery("select i from Inquerito i where i = "+id).getSingleResult());
+//    }
 }
